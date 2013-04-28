@@ -29,15 +29,15 @@ class SwiftMailer extends WireData implements Module, ConfigurableModule {
      */
     protected $swiftMailer;
 
-	/**
-	 * getModuleInfo is a module required by all modules to tell ProcessWire about them
-	 *
-	 * @return array
-	 *
-	 */
-	public static function getModuleInfo() {
+    /**
+     * getModuleInfo is a module required by all modules to tell ProcessWire about them
+     *
+     * @return array
+     *
+     */
+    public static function getModuleInfo() {
 
-		return array(
+        return array(
             'title' => 'Swift Mailer',
             'summary' => __('Provides replacement for PHP mail() function'),
             'href' => '',
@@ -47,7 +47,7 @@ class SwiftMailer extends WireData implements Module, ConfigurableModule {
             'autoload' => true
         );
 
-	}
+    }
 
     /**
      * Default configuration for this module
@@ -218,13 +218,13 @@ class SwiftMailer extends WireData implements Module, ConfigurableModule {
     }
 
     /**
-	 * Initialize the module
-	 *
-	 * ProcessWire calls this when the module is loaded. For 'autoload' modules, this will be called
-	 * when ProcessWire's API is ready. As a result, this is a good place to attach hooks. 
-	 *
-	 */
-	public function init() {
+     * Initialize the module
+     *
+     * ProcessWire calls this when the module is loaded. For 'autoload' modules, this will be called
+     * when ProcessWire's API is ready. As a result, this is a good place to attach hooks. 
+     *
+     */
+    public function init() {
         if ($this->transport != "Smtp" || $this->SMTPServer && $this->SMTPPort && $this->senderAddress) {
 
             // init Swift Mailer
