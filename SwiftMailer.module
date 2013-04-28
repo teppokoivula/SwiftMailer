@@ -251,18 +251,18 @@ class SwiftMailer extends WireData implements Module, ConfigurableModule {
             $this->mailer->addHookBefore('send', $this, 'send'); 
 
         }
-	}
+    }
 
-	/**
-	 * Send email using Swift Mailer mail() function
+    /**
+     * Send email using Swift Mailer mail() function
      *
      * This method overrides default Mailer->send() method.
-	 *
+     *
      * @param HookEvent $event
      * @return int number of recipients accepted for delivery
      *
-	 */
-	public function send(HookEvent $event) {
+     */
+    public function send(HookEvent $event) {
 
         // prevent execution of original send method
         $event->replace = true;
@@ -286,6 +286,6 @@ class SwiftMailer extends WireData implements Module, ConfigurableModule {
 
         return $this->swiftMailer->send($message);
 
-	}
+    }
 
 }
